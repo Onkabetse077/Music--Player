@@ -126,7 +126,12 @@ const renderSongs = (array) =>{
 
 //Event Listener
 playButton.addEventListener("click",()=>{
-
+  if (userData?.currentSong === null) {
+    playSong(userData?.songs[0].id);
+  }
+  else{
+    playSong(userData?.currentSong.id);
+  }
 });
 
 //Display the Songs in the UI
